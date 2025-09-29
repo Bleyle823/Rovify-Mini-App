@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const URL = process.env.NEXT_PUBLIC_URL;
+  const URL = 'https://rovify.vercel.app';
   return {
     title: "Rovify Mini - Discover Amazing Events",
     description:
@@ -18,14 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
     other: {
       "fc:frame": JSON.stringify({
         version: "next",
-        imageUrl: `${URL || ''}/hero.png`,
+        imageUrl: `${URL}/hero.png`,
         button: {
           title: "Launch Rovify Mini",
           action: {
             type: "launch_frame",
             name: "Rovify Mini",
             url: URL,
-            splashImageUrl: `${URL || ''}/splash.png`,
+            splashImageUrl: `${URL}/splash.png`,
             splashBackgroundColor: "#0f0f0f",
           },
         },
