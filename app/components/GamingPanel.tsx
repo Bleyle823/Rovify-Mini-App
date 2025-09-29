@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FiPlay, FiPause, FiVolume2, FiVolumeX, FiSettings, FiUsers,
-  FiTrophy, FiStar, FiClock, FiTarget, FiZap, FiGamepad2
+  FiStar, FiClock, FiTarget, FiZap
 } from 'react-icons/fi';
 import { 
-  BsController, BsTrophy, BsStar, BsClock, BsTarget, BsLightning,
+  BsController, BsTrophy, BsStar, BsClock, BsLightning,
   BsPlayCircle, BsPauseCircle, BsVolumeUp, BsVolumeMute
 } from 'react-icons/bs';
 import { IoGameControllerOutline, IoTrophyOutline, IoStarOutline } from 'react-icons/io5';

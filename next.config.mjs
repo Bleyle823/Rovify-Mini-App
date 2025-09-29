@@ -6,13 +6,7 @@ const nextConfig = {
     // Silence workspace root warning by scoping file tracing to project
     outputFileTracingRoot: process.cwd(),
   },
-};
-
-export default nextConfig;
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Silence warnings
+  // Silence known optional dependency warnings in some web3 libs
   // https://github.com/WalletConnect/walletconnect-monorepo/issues/1908
   webpack: (config) => {
     config.externals.push("pino-pretty", "lokijs", "encoding");
