@@ -18,16 +18,15 @@ export async function generateMetadata(): Promise<Metadata> {
     other: {
       "fc:frame": JSON.stringify({
         version: "next",
-        imageUrl: process.env.NEXT_PUBLIC_APP_HERO_IMAGE,
+        imageUrl: `${URL || ''}/hero.png`,
         button: {
           title: "Launch Rovify Mini",
           action: {
             type: "launch_frame",
             name: "Rovify Mini",
             url: URL,
-            splashImageUrl: process.env.NEXT_PUBLIC_SPLASH_IMAGE,
-            splashBackgroundColor:
-              process.env.NEXT_PUBLIC_SPLASH_BACKGROUND_COLOR,
+            splashImageUrl: `${URL || ''}/splash.png`,
+            splashBackgroundColor: "#0f0f0f",
           },
         },
       }),
