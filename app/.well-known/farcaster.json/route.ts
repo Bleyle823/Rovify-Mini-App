@@ -108,7 +108,7 @@ export async function GET(request: Request) {
     },
     baseBuilder: {
       allowedAddresses: [
-        '0xB46476564654446BAC73381fa7804CD558609511'
+        '0x51FfA4CA0f0dA2c466Ad48763899c87E87260e7e'
       ]
     },
     frame: withValidProperties({
