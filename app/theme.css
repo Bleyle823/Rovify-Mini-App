@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Rovify Primary Theme Colors */
+  --rovify-primary: #ff5722;
+  --rovify-primary-light: #ff8a65;
+  --rovify-primary-dark: #e64a19;
+  
+  /* Rovify Neutral Colors */
+  --rovify-background: #ffffff;
+  --rovify-card-bg: #ffffff;
+  --rovify-text: #333333;
+  --rovify-text-light: #757575;
+  --rovify-gray: #fafafa;
+  --rovify-gray-light: #f5f5f5;
+  --rovify-gray-dark: #e0e0e0;
+  
+  /* App Variables for compatibility */
+  --app-background: var(--rovify-background);
+  --app-foreground: var(--rovify-text);
+  --app-foreground-muted: var(--rovify-text-light);
+  --app-accent: var(--rovify-primary);
+  --app-accent-hover: var(--rovify-primary-dark);
+  --app-accent-active: #d84315;
+  --app-accent-light: #fff3e0;
+  --app-gray: var(--rovify-gray-light);
+  --app-gray-dark: var(--rovify-gray-dark);
+  --app-card-bg: var(--rovify-card-bg);
+  --app-card-border: rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode Rovify colors */
+    --rovify-background: #0f0f0f;
+    --rovify-card-bg: #1a1a1a;
+    --rovify-text: #ffffff;
+    --rovify-text-light: #a0a0a0;
+    --rovify-gray: #1a1a1a;
+    --rovify-gray-light: #2a2a2a;
+    --rovify-gray-dark: #3a3a3a;
+    
+    /* App Variables for dark mode */
+    --app-background: var(--rovify-background);
+    --app-foreground: var(--rovify-text);
+    --app-foreground-muted: var(--rovify-text-light);
+    --app-accent: var(--rovify-primary);
+    --app-accent-hover: var(--rovify-primary-light);
+    --app-accent-active: #ff7043;
+    --app-accent-light: #2d1b1b;
+    --app-gray: var(--rovify-gray-light);
+    --app-gray-dark: var(--rovify-gray-dark);
+    --app-card-bg: var(--rovify-card-bg);
+    --app-card-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.mini-app-theme {
+  --ock-font-family: "Inter", sans-serif;
+  --ock-border-radius: 0.75rem;
+  --ock-border-radius-inner: 0.5rem;
+
+  /* Text colors */
+  --ock-text-inverse: var(--app-background);
+  --ock-text-foreground: var(--app-foreground);
+  --ock-text-foreground-muted: var(--app-foreground-muted);
+  --ock-text-error: #ef4444;
+  --ock-text-primary: var(--app-accent);
+  --ock-text-success: #22c55e;
+  --ock-text-warning: #f59e0b;
+  --ock-text-disabled: #a1a1aa;
+
+  /* Background colors */
+  --ock-bg-default: var(--app-background);
+  --ock-bg-default-hover: var(--app-gray);
+  --ock-bg-default-active: var(--app-gray-dark);
+  --ock-bg-alternate: var(--app-gray);
+  --ock-bg-alternate-hover: var(--app-gray-dark);
+  --ock-bg-alternate-active: var(--app-gray-dark);
+  --ock-bg-inverse: var(--app-foreground);
+  --ock-bg-inverse-hover: #2a2a2a;
+  --ock-bg-inverse-active: #3a3a3a;
+  --ock-bg-primary: var(--app-accent);
+  --ock-bg-primary-hover: var(--app-accent-hover);
+  --ock-bg-primary-active: var(--app-accent-active);
+  --ock-bg-primary-washed: var(--app-accent-light);
+  --ock-bg-primary-disabled: #80a8ff;
+  --ock-bg-secondary: var(--app-gray);
+  --ock-bg-secondary-hover: var(--app-gray-dark);
+  --ock-bg-secondary-active: #d1d1d1;
+  --ock-bg-error: #fee2e2;
+  --ock-bg-warning: #fef3c7;
+  --ock-bg-success: #dcfce7;
+  --ock-bg-default-reverse: var(--app-foreground);
+
+  /* Icon colors */
+  --ock-icon-color-primary: var(--app-accent);
+  --ock-icon-color-foreground: var(--app-foreground);
+  --ock-icon-color-foreground-muted: #71717a;
+  --ock-icon-color-inverse: var(--app-background);
+  --ock-icon-color-error: #ef4444;
+  --ock-icon-color-success: #22c55e;
+  --ock-icon-color-warning: #f59e0b;
+
+  /* Line colors */
+  --ock-line-primary: var(--app-accent);
+  --ock-line-default: var(--app-gray-dark);
+  --ock-line-heavy: #a1a1aa;
+  --ock-line-inverse: #d4d4d8;
+}
+
+* {
+  touch-action: manipulation;
+}
+
+body {
+  color: var(--app-foreground);
+  background: var(--rovify-gray);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-fade-out {
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Rovify Custom Styling Classes */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--rovify-primary),
+    var(--rovify-primary-light)
+  );
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rovify-primary);
+}
+
+/* Rovify Animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.8;
+    filter: brightness(0.8) blur(1px);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2) blur(0.5px);
+  }
+  100% {
+    opacity: 0.8;
+    filter: brightness(0.8) blur(1px);
+  }
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card-dark {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neumorphism Classes */
+.neumorph-card {
+  background: #ffffff;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.05),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+}
+
+.neumorph-button {
+  background: #ffffff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05),
+    -5px -5px 10px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.neumorph-button:active {
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.05),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+}
+
+/* Rovify Badge Styles */
+.rovify-badge {
+  background: linear-gradient(
+    to right,
+    var(--rovify-primary),
+    var(--rovify-primary-light)
+  );
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Rovify Button Styles */
+.rovify-button {
+  background: linear-gradient(135deg, var(--rovify-primary), var(--rovify-primary-light));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+.rovify-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+}
+
+.rovify-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(255, 87, 34, 0.3);
+}
+
+/* Rovify Card Styles */
+.rovify-card {
+  background: var(--rovify-card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 87, 34, 0.1);
+  transition: all 0.3s ease;
+}
+
+.rovify-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
